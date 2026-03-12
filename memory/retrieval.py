@@ -1,18 +1,18 @@
 import sqlite3
 
 
-def find_similar_question(question: str):
+def find_similar_question(question):
 
     conn = sqlite3.connect("debates.db")
-    cursor = conn.cursor()
+    cur = conn.cursor()
 
-    cursor.execute(
-        "SELECT question, best_agent, confidence, evaluation FROM debates WHERE question = ?",
+    cur.execute(
+        "SELECT question,best_agent,confidence,evaluation FROM debates WHERE question=?",
         (question,)
     )
 
-    result = cursor.fetchone()
+    row = cur.fetchone()
 
     conn.close()
 
-    return result
+    return row

@@ -1,23 +1,16 @@
 from engine.answer_engine import generate_response
 
+PROMPT = """
+You are an AI researcher.
 
-RESEARCH_PROMPT = """
-You are an AI researcher working in machine learning.
+Focus on research evidence.
 
-Focus on:
-- scientific evidence
-- academic research
-- current AI capabilities
-- realistic limitations
-
-Provide a balanced and research-based answer.
+Maximum 3 sentences.
 """
 
 
 def research_agent(question: str):
 
-    prompt = RESEARCH_PROMPT + "\n\nQuestion: " + question
+    prompt = PROMPT + "\nQuestion: " + question
 
-    answer = generate_response(prompt)
-
-    return answer
+    return generate_response(prompt)

@@ -1,19 +1,19 @@
 import sqlite3
 
-DB_NAME = "debates.db"
+DB = "debates.db"
 
 
-def get_connection():
-    return sqlite3.connect(DB_NAME)
+def get_conn():
+    return sqlite3.connect(DB)
 
 
 def create_tables():
 
-    conn = get_connection()
-    cursor = conn.cursor()
+    conn = get_conn()
+    cur = conn.cursor()
 
-    cursor.execute("""
-    CREATE TABLE IF NOT EXISTS debates (
+    cur.execute("""
+    CREATE TABLE IF NOT EXISTS debates(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         question TEXT,
         best_agent TEXT,
@@ -26,14 +26,15 @@ def create_tables():
     conn.commit()
     conn.close()
 
+
 def save_debate(question, best_agent, confidence, evaluation):
 
-    conn = get_connection()
-    cursor = conn.cursor()
+    conn = get_conn()
+    cur = conn.cursor()
 
-    cursor.execute("""
-    INSERT INTO debates (question, best_agent, confidence, evaluation)
-    VALUES (?, ?, ?, ?)
+    cur.execute("""
+    INSERT INTO debates(question,best_agent,confidence,evaluation)
+    VALUES(?,?,?,?)
     """, (question, best_agent, confidence, evaluation))
 
     conn.commit()

@@ -3,14 +3,17 @@ from agents.research_agent import research_agent
 from agents.startup_agent import startup_agent
 from agents.security_agent import security_agent
 from agents.philosophy_agent import philosophy_agent
-from memory.retrieval import find_similar_question
+
 from agents.critic_agent import critic_agent
+
 from engine.critique_engine import generate_critique
 
 from memory.database import save_debate
+from memory.retrieval import find_similar_question
 
 
 def run_debate(question: str):
+
     previous = find_similar_question(question)
 
     if previous:
@@ -22,7 +25,7 @@ def run_debate(question: str):
             "confidence": previous[2],
             "evaluation": previous[3]
         }
-    # Round 1 — Initial Arguments
+
     responses = {}
 
     responses["Engineer Agent"] = engineer_agent(question)
@@ -31,40 +34,35 @@ def run_debate(question: str):
     responses["Security Agent"] = security_agent(question)
     responses["Philosophy Agent"] = philosophy_agent(question)
 
-    # Round 2 — Critiques
     critiques = {}
 
     for agent in responses:
 
-        other_arguments = ""
+        other = ""
 
-        for other_agent, answer in responses.items():
+        for a, ans in responses.items():
 
-            if other_agent != agent:
-                other_arguments += f"{other_agent}: {answer}\n"
+            if a != agent:
+                other += f"{a}: {ans}\n"
 
-        critiques[agent] = generate_critique(agent, question, other_arguments)
+        critiques[agent] = generate_critique(agent, question, other)
 
-    # Round 3 — Critic Evaluation
     evaluation = critic_agent(question, responses)
 
     best_agent = "Unknown"
-    confidence = 0.0
+    confidence = 0
 
-    lines = evaluation.split("\n")
-
-    for line in lines:
+    for line in evaluation.split("\n"):
 
         if "Best Agent" in line:
             best_agent = line.split(":")[-1].strip()
 
         if "Confidence" in line:
             try:
-                confidence = float(line.split(":")[-1].strip())
+                confidence = float(line.split(":")[-1])
             except:
-                confidence = 0.0
+                confidence = 0
 
-    # Save debate in database
     save_debate(question, best_agent, confidence, evaluation)
 
     return {

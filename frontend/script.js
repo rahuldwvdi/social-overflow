@@ -1,54 +1,69 @@
-async function runDebate() {
+async function runDebate(){
 
-    const question = document.getElementById("questionInput").value;
+const question=document.getElementById("questionInput").value
 
-    if (!question) {
-        alert("Enter a question");
-        return;
-    }
+if(!question){
 
-    try {
+alert("Ask a question first")
+return
 
-        const response = await fetch(
-            "/debate?question=" + encodeURIComponent(question)
-        );
+}
 
-        const data = await response.json();
+const res=await fetch("/debate?question="+encodeURIComponent(question))
 
-        console.log(data);
+const data=await res.json()
 
-        const results = document.getElementById("results");
-        results.innerHTML = "";
+console.log(data)
 
-        const agents = data.debate.arguments;
+const results=document.getElementById("results")
 
-        for (const agent in agents) {
+results.innerHTML=""
 
-            const div = document.createElement("div");
+if(data.debate){
 
-            div.className = "agent";
+const agents=data.debate.arguments
 
-            div.innerHTML =
-                "<h3>" + agent + "</h3>" +
-                "<p>" + agents[agent] + "</p>";
+Object.keys(agents).forEach(agent=>{
 
-            results.appendChild(div);
-        }
+const div=document.createElement("div")
 
-        const evaluation = document.createElement("div");
+div.className="agent"
 
-        evaluation.className = "agent";
+div.innerHTML=
 
-        evaluation.innerHTML =
-            "<h3>Critic Evaluation</h3>" +
-            "<p>" + data.debate.evaluation + "</p>";
+`<h3>${agent}</h3>
+<p>${agents[agent]}</p>`
 
-        results.appendChild(evaluation);
+results.appendChild(div)
 
-    } catch (error) {
+})
 
-        console.error(error);
+const critic=document.createElement("div")
 
-        alert("Error contacting backend");
-    }
+critic.className="agent"
+
+critic.innerHTML=
+
+`<h3>Critic Evaluation</h3>
+<p>${data.debate.evaluation}</p>`
+
+results.appendChild(critic)
+
+}
+
+else{
+
+const div=document.createElement("div")
+
+div.className="agent"
+
+div.innerHTML=
+
+`<h3>Previous Debate Found</h3>
+<p>${data.evaluation}</p>`
+
+results.appendChild(div)
+
+}
+
 }

@@ -1,25 +1,20 @@
 from engine.answer_engine import generate_response
 
+PROMPT = """
+You are a senior software engineer.
 
-ENGINEER_PROMPT = """
-You are a senior software engineer with 15 years of experience.
-
-Focus on:
-- software architecture
-- real engineering constraints
-- practical development challenges
+Answer the question in a concise way.
 
 Rules:
-- Keep the answer concise
-- Maximum 3 sentences
-- Be direct and technical
+- Respond with only the answer.
+- Do NOT repeat the question.
+- Do NOT explain instructions.
+- Maximum 3 sentences.
 """
 
 
 def engineer_agent(question: str):
 
-    prompt = ENGINEER_PROMPT + "\n\nQuestion: " + question
+    prompt = f"{PROMPT}\nQuestion: {question}\nAnswer:"
 
-    answer = generate_response(prompt)
-
-    return answer
+    return generate_response(prompt)

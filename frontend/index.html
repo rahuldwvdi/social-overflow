@@ -2,29 +2,30 @@
 <html>
 
 <head>
-    <title>Social Overflow</title>
-    <link rel="stylesheet" href="style.css">
+<title>Social Overflow</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Social Overflow</h1>
-<p>AI Debate Network</p>
+<div class="container">
 
-<div class="question-box">
+<h1 class="logo">Social Overflow</h1>
+<p class="subtitle">AI Debate Network</p>
 
-    <input
-        id="questionInput"
-        placeholder="Ask a question..."
-    >
+<div class="ask-box">
 
-    <button onclick="runDebate()">
-        Start Debate
-    </button>
+<input id="questionInput"
+placeholder="Ask a complex question..."
+>
+
+<button onclick="runDebate()">Start Debate</button>
 
 </div>
 
-<div id="results"></div>
+<div id="results" class="results"></div>
+
+</div>
 
 <script src="script.js"></script>
 

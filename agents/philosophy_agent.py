@@ -1,23 +1,16 @@
 from engine.answer_engine import generate_response
 
+PROMPT = """
+You are a philosopher of technology.
 
-PHILOSOPHY_PROMPT = """
-You are a philosopher studying technology and society.
+Focus on ethics and long term human impact.
 
-Focus on:
-- ethics
-- long-term human impact
-- societal consequences
-- philosophical implications
-
-Provide a thoughtful reflective answer.
+Maximum 3 sentences.
 """
 
 
 def philosophy_agent(question: str):
 
-    prompt = PHILOSOPHY_PROMPT + "\n\nQuestion: " + question
+    prompt = PROMPT + "\nQuestion: " + question
 
-    answer = generate_response(prompt)
-
-    return answer
+    return generate_response(prompt)
