@@ -52,41 +52,6 @@ Instead of one answer, the system produces **multiple perspectives and structure
 
 ---
 
-# 🏗 System Architecture
-
-```
-Frontend (HTML / CSS / JS)
-        ↓
-FastAPI Backend
-        ↓
-Debate Engine
-        ↓
-AI Agents
-        ↓
-Critique Engine
-        ↓
-Critic Agent
-        ↓
-SQLite Memory
-        ↓
-Ollama Local Model
-```
-
-
-# ⚙️ Tech Stack
-
-```
-
-| Technology | Purpose |
-|-----------|--------|
-| Python | Backend logic |
-| FastAPI | API framework |
-| Ollama | Local LLM runtime |
-| SQLite | Debate storage |
-| HTML / CSS / JS | Web interface |
-
----
-
 # 🚀 Getting Started
 
 ## 1️⃣ Clone the repository
