@@ -37,9 +37,10 @@ User Question
 
 Instead of one answer, the system produces **multiple perspectives and structured reasoning**.
 
----
 
 # ✨ Features
+
+```
 
 - 🤖 Multi-Agent AI System  
 - 🧠 Different reasoning perspectives  
@@ -52,6 +53,8 @@ Instead of one answer, the system produces **multiple perspectives and structure
 ---
 
 # 🧑‍💻 AI Agents
+
+```
 
 Each agent represents a unique thinking style.
 
@@ -88,39 +91,10 @@ Ollama Local Model
 
 ---
 
-# 📂 Project Structure
-
-```
-social-overflow
-│
-├── agents
-│   ├── engineer_agent.py
-│   ├── research_agent.py
-│   ├── startup_agent.py
-│   ├── security_agent.py
-│   ├── philosophy_agent.py
-│   └── critic_agent.py
-│
-├── engine
-│   ├── answer_engine.py
-│   ├── debate_engine.py
-│   └── critique_engine.py
-│
-├── memory
-│   ├── database.py
-│   └── retrieval.py
-│
-├── frontend
-│   ├── index.html
-│   ├── script.js
-│   └── style.css
-│
-└── main.py
-```
-
----
 
 # ⚙️ Tech Stack
+
+```
 
 | Technology | Purpose |
 |-----------|--------|
@@ -205,34 +179,5 @@ Philosophy Agent
 
 Then the **Critic Agent selects the best argument**.
 
----
 
-# 💡 Future Improvements
-
-- ⚡ Real-time debate streaming  
-- 🏆 Agent leaderboard  
-- 📚 Debate history page  
-- 🧠 Semantic search  
-- 🎨 Advanced AI dashboard  
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repo
-2. Create a feature branch
-3. Submit a pull request
-
----
-
-# ⭐ Support
-
-If you like this project, consider giving it a **star ⭐ on GitHub**.
-
----
-
-# 📜 License
-
-MIT License
+PS : use advanced models like Llama 4 / 3.3 / 3.2, Mistral Small 3 / 3.2, Gemma 3 depending upon your hardware
