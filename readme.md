@@ -1,43 +1,57 @@
-# Social Overflow
+# 🚀 Social Overflow
 
-Social Overflow is a multi-agent AI debate platform.
+> A **multi-agent AI debate platform** where AI experts discuss complex questions and evaluate the best answer.
 
-Instead of a single AI answer, multiple AI agents propose arguments, critique each other, and a critic agent evaluates the best reasoning.
+Instead of a single AI response, **multiple AI agents collaborate, challenge each other, and refine reasoning** to reach better conclusions.
 
-## Features
+---
 
-- Multi-agent reasoning
-- AI debate engine
-- Adversarial critique system
-- Critic evaluation
-- SQLite debate memory
-- Context retrieval
-- Local LLM runtime using Ollama
-- FastAPI backend
-- Simple web dashboard
+## 🧠 Concept
 
-## Tech Stack
+Most AI apps do this:
 
-Python  
-FastAPI  
-SQLite  
-HTML/CSS/JS  
-Ollama (TinyLlama)
+User → AI → Answer
 
-## Example Flow
+Social Overflow does this:
 
-User Question → AI Agents Debate → Critiques → Critic Evaluation → Stored Debate
+User Question  
+↓  
+🤖 Multiple AI Agents respond  
+↓  
+⚔️ Agents critique each other's reasoning  
+↓  
+🏆 Critic Agent evaluates the best argument  
 
-## Running Locally
+This produces **more thoughtful and balanced answers**.
 
-Install dependencies:
+---
 
-pip install fastapi uvicorn requests
+## ✨ Features
 
-Run server:
+- 🤖 **Multi-Agent AI System**
+- 🧠 **Different reasoning perspectives**
+- ⚔️ **Agent critiques**
+- 🏆 **Critic agent selects best argument**
+- 💾 **Debate memory using SQLite**
+- 🔍 **Context retrieval for repeated questions**
+- 🌐 **Simple web interface**
+- 🧩 **Modular architecture**
 
-uvicorn main:app --reload
+---
 
-Open:
+## 🧑‍💻 AI Agents
 
-http://localhost:8000/app
+Each agent represents a different perspective.
+
+| Agent | Role |
+|-----|-----|
+| 👨‍💻 Engineer Agent | Practical system thinking |
+| 🔬 Research Agent | Scientific perspective |
+| 🚀 Startup Agent | Innovation & disruption |
+| 🔐 Security Agent | Risk & safety analysis |
+| 🤔 Philosophy Agent | Ethics & societal impact |
+| 🏆 Critic Agent | Evaluates the best argument |
+
+---
+
+## 🏗 Architecture
