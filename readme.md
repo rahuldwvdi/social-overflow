@@ -71,9 +71,10 @@ Startup Agent
 Security Agent
 Philosophy Agent
 ```
+```
+Then the Critic Agent selects the best argument.
 
-Then the **Critic Agent selects the best argument**.
-
+```
 ```
 PS : use advanced models like Llama 4 / 3.3 / 3.2, Mistral Small 3 / 3.2, Gemma 3 depending upon your hardware
 ```
