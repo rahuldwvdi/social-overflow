@@ -52,23 +52,6 @@ Instead of one answer, the system produces **multiple perspectives and structure
 
 ---
 
-# 🧑‍💻 AI Agents
-
-```
-
-Each agent represents a unique thinking style.
-
-| Agent | Role |
-|------|------|
-| 👨‍💻 Engineer Agent | Practical system thinking |
-| 🔬 Research Agent | Scientific perspective |
-| 🚀 Startup Agent | Innovation & disruption |
-| 🔐 Security Agent | Risk & safety analysis |
-| 🤔 Philosophy Agent | Ethical & societal reasoning |
-| 🏆 Critic Agent | Evaluates arguments |
-
----
-
 # 🏗 System Architecture
 
 ```
@@ -88,8 +71,6 @@ SQLite Memory
         ↓
 Ollama Local Model
 ```
-
----
 
 
 # ⚙️ Tech Stack
@@ -114,8 +95,6 @@ Ollama Local Model
 git clone https://github.com/YOUR_USERNAME/social-overflow.git
 cd social-overflow
 ```
-
----
 
 ## 2️⃣ Install dependencies
 
@@ -179,5 +158,6 @@ Philosophy Agent
 
 Then the **Critic Agent selects the best argument**.
 
-
+```
 PS : use advanced models like Llama 4 / 3.3 / 3.2, Mistral Small 3 / 3.2, Gemma 3 depending upon your hardware
+```
