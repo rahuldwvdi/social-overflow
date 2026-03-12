@@ -1,6 +1,6 @@
 # 🚀 Social Overflow
 
-<p align="center">
+<p>
 A <b>multi-agent AI debate platform</b> where AI agents discuss complex questions and produce structured reasoning.
 </p>
 
@@ -9,7 +9,6 @@ A <b>multi-agent AI debate platform</b> where AI agents discuss complex question
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-backend-green)
 ![Ollama](https://img.shields.io/badge/Ollama-local%20LLM-purple)
-![License](https://img.shields.io/badge/license-MIT-orange)
 
 </p>
 
