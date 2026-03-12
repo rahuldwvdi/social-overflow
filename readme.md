@@ -51,48 +51,8 @@ Instead of one answer, the system produces **multiple perspectives and structure
 - ⚡ Runs completely locally with Ollama  
 
 ---
-
-## 2️⃣ Install dependencies
-
-```bash
-pip install fastapi uvicorn requests
-```
-
 ---
 
-## 3️⃣ Install Ollama
-
-Download Ollama:
-
-```
-https://ollama.com
-```
-
-Run a model:
-
-```bash
-ollama run tinyllama
-```
-
----
-
-## 4️⃣ Start the server
-
-```bash
-uvicorn main:app --reload
-```
-
----
-
-## 5️⃣ Open the app
-
-Open in browser:
-
-```
-http://localhost:8000
-```
-
-Ask a question and watch **AI agents debate**.
 
 ---
 
