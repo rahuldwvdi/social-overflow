@@ -52,15 +52,6 @@ Instead of one answer, the system produces **multiple perspectives and structure
 
 ---
 
-# 🚀 Getting Started
-
-## 1️⃣ Clone the repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/social-overflow.git
-cd social-overflow
-```
-
 ## 2️⃣ Install dependencies
 
 ```bash
