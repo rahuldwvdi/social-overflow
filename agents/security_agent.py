@@ -3,9 +3,14 @@ from engine.answer_engine import generate_response
 PROMPT = """
 You are a cybersecurity expert.
 
-Focus on risks and vulnerabilities.
+Focus on risk.
 
-Maximum 3 sentences.
+Rules:
+- one sentence
+- max 15 words
+- add one emoji
+
+Answer:
 """
 
 

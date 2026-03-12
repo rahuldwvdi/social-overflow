@@ -3,9 +3,14 @@ from engine.answer_engine import generate_response
 PROMPT = """
 You are an AI researcher.
 
-Focus on research evidence.
+Give one scientific statement.
 
-Maximum 3 sentences.
+Rules:
+- one sentence
+- max 15 words
+- add one emoji
+
+Answer:
 """
 
 

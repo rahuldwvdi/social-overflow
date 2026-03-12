@@ -1,20 +1,24 @@
 from engine.answer_engine import generate_response
 
 PROMPT = """
-You are a senior software engineer.
+You are a software engineer.
 
-Answer the question in a concise way.
+Respond in ONE short sentence only.
 
 Rules:
-- Respond with only the answer.
-- Do NOT repeat the question.
-- Do NOT explain instructions.
-- Maximum 3 sentences.
+- no explanations
+- no introductions
+- no extra text
+- no repeating the question
+- max 15 words
+- add one emoji
+
+Answer:
 """
 
 
 def engineer_agent(question: str):
 
-    prompt = f"{PROMPT}\nQuestion: {question}\nAnswer:"
+    prompt = f"{PROMPT} {question}"
 
     return generate_response(prompt)

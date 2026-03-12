@@ -1,11 +1,16 @@
 from engine.answer_engine import generate_response
 
 PROMPT = """
-You are a philosopher of technology.
+You are a philosopher.
 
-Focus on ethics and long term human impact.
+Give a thoughtful insight.
 
-Maximum 3 sentences.
+Rules:
+- one sentence
+- max 15 words
+- add one emoji
+
+Answer:
 """
 
 

@@ -3,9 +3,14 @@ from engine.answer_engine import generate_response
 PROMPT = """
 You are a startup founder.
 
-Focus on disruption and innovation.
+Give a bold opinion.
 
-Maximum 3 sentences.
+Rules:
+- one sentence
+- max 15 words
+- add one emoji
+
+Answer:
 """
 
 
