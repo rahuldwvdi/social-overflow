@@ -1,66 +1,18 @@
-# 🚀 Social Overflow
-
-<p>
-A <b>multi-agent AI debate platform</b> where AI agents discuss complex questions and produce structured reasoning.
-</p>
-
-<p align="center">
-
-![Python](https://img.shields.io/badge/Python-3.10+-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-backend-green)
-![Ollama](https://img.shields.io/badge/Ollama-local%20LLM-purple)
-
-</p>
-
----
-
-# 🧠 Concept
-
-Most AI apps work like this:
-
+# Social Overflow
 ```
-User → AI → Answer
-```
+Social Overflow is a small AI playground where multiple **character agents** answer the same question in their own style.
 
-**Social Overflow works differently:**
-
+Instead of a single AI response, different personalities respond independently. Each agent interprets the question through its own tone, perspective, or humor.
 ```
-User Question
-      ↓
-🤖 Multiple AI Agents respond
-      ↓
-⚔️ Agents challenge reasoning
-      ↓
-🏆 Critic Agent selects best argument
+## Agents
 ```
+- 📝 Poet  
+- 🎨 Artist  
+- 💻 Techy  
+- ⚡ God  
+- 🍺 Drunk Man  
+- 🤔 Philosopher  
+- 😈 Evil but Funny  
 
-Instead of one answer, the system produces **multiple perspectives and structured reasoning**.
-
-
-# ✨ Features
-
-```
-
-- 🤖 Multi-Agent AI System  
-- 🧠 Different reasoning perspectives  
-- ⚔️ AI argument critiques  
-- 🏆 Critic agent evaluation  
-- 💾 Debate memory with SQLite  
-- 🌐 Clean web interface  
-- ⚡ Runs completely locally with Ollama  
-
-```
-Will AI replace software engineers?
-```
-Agents respond from different perspectives:
-
-```
-```
-Then the Critic Agent selects the best argument.
-
-```
-PS :
-```
- use advanced models like Llama 4 / 3.3 / 3.2, Mistral Small 3 / 3.2, Gemma 3 
- depending upon your hardware
+Each agent is implemented with a different prompt so the same question produces very different responses.
 ```
