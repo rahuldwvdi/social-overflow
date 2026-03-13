@@ -12,7 +12,7 @@ def generate_response(prompt: str):
     response = client.chat.completions.create(
         model=MODEL,
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=30,
+        max_tokens=60,
         temperature=0.3
     )
 

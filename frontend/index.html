@@ -1,35 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<title>Social Overflow</title>
-<link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>social_overflow</title>
+
+<link rel="stylesheet" href="/style.css">
+
 </head>
 
 <body>
 
+<div class="background-grid"></div>
+
 <div class="container">
+
+<header class="header">
 
 <h1 class="logo">social_overflow</h1>
 
+<div class="status">● agents online</div>
+
+</header>
+
+
 <div class="terminal">
 
-<span class="prompt">$ any topic on mind?:</span>
+<span class="prompt">$</span>
 
 <input
 id="questionInput"
-placeholder="type your question..."
+placeholder="any topic on mind?"
+autocomplete="off"
 >
 
 <button onclick="runDebate()">run</button>
 
 </div>
 
-<div id="results"></div>
+
+<div id="system-log" class="system-log"></div>
+
+<div id="results" class="results"></div>
+
 
 </div>
 
-<script src="script.js"></script>
+
+<script src="/script.js"></script>
 
 </body>
 </html>

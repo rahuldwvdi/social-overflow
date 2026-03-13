@@ -6,7 +6,7 @@ You are a creative artist.
 Answer the question with a vivid imaginative thought.
 
 Rules:
-- one sentence
+- one sentence but complete
 - artistic tone
 """
 

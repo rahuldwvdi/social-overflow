@@ -1,37 +1,82 @@
 async function runDebate(){
 
-const q = document.getElementById("questionInput").value
-const results = document.getElementById("results")
+const q=document.getElementById("questionInput").value
+const results=document.getElementById("results")
+const log=document.getElementById("system-log")
 
-results.innerHTML = "agents are thinking..."
+results.innerHTML=""
+log.innerHTML="initializing agents..."
 
-const res = await fetch("/debate?question=" + encodeURIComponent(q))
-const data = await res.json()
+const res=await fetch("/debate?question="+encodeURIComponent(q))
+const data=await res.json()
 
-console.log(data)
+const agents=data.arguments
 
-results.innerHTML = ""
+log.innerHTML="agents responding..."
 
-const agents = data.arguments
-
-if(!agents){
-results.innerHTML = "No responses returned"
-return
+const pets={
+"Poet":"🦋",
+"Artist":"🐱",
+"Techy":"🤖",
+"God":"🦅",
+"Drunk Man":"🐕",
+"Philosopher":"🦉",
+"Evil but Funny":"🐍"
 }
 
-Object.keys(agents).forEach(agent => {
+let delay=0
 
-const div = document.createElement("div")
+Object.keys(agents).forEach(agent=>{
 
-div.className = "agent"
+setTimeout(()=>{
 
-div.innerHTML = `
-<h3>${agent}</h3>
-<p>${agents[agent]}</p>
+const div=document.createElement("div")
+div.className="agent"
+
+div.innerHTML=`
+<div class="agent-title">// ${agent}</div>
+<div class="pet">${pets[agent] || "🐾"}</div>
+<p id="text-${agent}"></p>
 `
 
 results.appendChild(div)
 
+typeText(`text-${agent}`,agents[agent])
+
+},delay)
+
+delay+=700
+
 })
+
+}
+
+/* typing animation */
+
+function typeText(id,text){
+
+const element=document.getElementById(id)
+
+let i=0
+
+function type(){
+
+if(i<text.length){
+
+element.innerHTML=text.substring(0,i+1)+'<span class="cursor"></span>'
+
+i++
+
+setTimeout(type,18)
+
+}else{
+
+element.innerHTML=text
+
+}
+
+}
+
+type()
 
 }

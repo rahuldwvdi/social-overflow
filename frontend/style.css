@@ -1,112 +1,170 @@
 body{
-
 background:#0d1117;
 color:#c9d1d9;
-
 font-family:JetBrains Mono,monospace;
-
 margin:0;
 padding:40px;
-
 display:flex;
 justify-content:center;
-
 }
 
+/* animated grid background */
+
+.background-grid{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+background-size:40px 40px;
+
+z-index:-1;
+}
+
+/* container */
+
 .container{
-
 width:900px;
+}
 
+/* header */
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
 }
 
 .logo{
-
 color:#58a6ff;
-margin-bottom:30px;
-
+font-size:34px;
 }
 
-/* terminal input */
+.status{
+color:#7ee787;
+font-size:14px;
+}
+
+/* terminal */
 
 .terminal{
-
 display:flex;
 align-items:center;
 gap:10px;
-
 margin-bottom:30px;
-
 }
 
 .prompt{
-
 color:#7ee787;
-
 }
 
 input{
-
 background:#161b22;
 border:1px solid #30363d;
-
-padding:10px;
-
+padding:12px;
 color:white;
-
-width:400px;
-
+width:420px;
 font-family:inherit;
+transition:0.2s;
+}
 
+input:focus{
+border-color:#58a6ff;
+box-shadow:0 0 10px rgba(88,166,255,0.5);
+outline:none;
 }
 
 button{
-
 background:#238636;
 border:none;
-
-padding:10px 16px;
-
+padding:12px 20px;
 color:white;
 cursor:pointer;
-
+transition:0.2s;
 }
 
 button:hover{
-
 background:#2ea043;
-
+transform:translateY(-1px);
 }
 
-/* code blocks */
+/* system log */
+
+.system-log{
+color:#8b949e;
+font-size:13px;
+margin-bottom:10px;
+}
+
+/* agent cards */
 
 .agent{
-
 background:#161b22;
-
 border:1px solid #30363d;
-
-padding:16px;
-
-margin-top:15px;
-
+padding:18px;
+margin-top:16px;
 border-radius:6px;
 
+opacity:0;
+transform:translateY(10px);
+
+animation:fadeIn 0.4s forwards;
+transition:0.2s;
 }
+
+.agent:hover{
+border-color:#58a6ff;
+box-shadow:0 0 12px rgba(88,166,255,0.2);
+}
+
+/* titles */
 
 .agent-title{
-
 color:#58a6ff;
-
-margin-bottom:10px;
-
+margin-bottom:8px;
 }
 
-/* code style */
+/* pets */
 
-pre{
+.pet{
+font-size:26px;
+margin-bottom:6px;
+animation:petFloat 3s ease-in-out infinite;
+}
 
-white-space:pre-wrap;
+/* cursor */
 
-line-height:1.5;
+.cursor{
+display:inline-block;
+width:8px;
+background:#58a6ff;
+margin-left:4px;
+animation:blink 1s infinite;
+}
 
+/* animations */
+
+@keyframes fadeIn{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes blink{
+0%{opacity:0}
+50%{opacity:1}
+100%{opacity:0}
+}
+
+@keyframes petFloat{
+0%{transform:translateY(0px)}
+50%{transform:translateY(-6px)}
+100%{transform:translateY(0px)}
 }
