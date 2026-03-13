@@ -1,70 +1,37 @@
 async function runDebate(){
 
-const q=document.getElementById("questionInput").value
-const results=document.getElementById("results")
+const q = document.getElementById("questionInput").value
+const results = document.getElementById("results")
 
-/* loading screen */
+results.innerHTML = "agents are thinking..."
 
-results.innerHTML = `
-<div class="agent">
-<div class="agent-title">// system</div>
-<pre>
+const res = await fetch("/debate?question=" + encodeURIComponent(q))
+const data = await res.json()
 
-agents are thinking to their full capacity...
+console.log(data)
 
-grab a seat and spectate ☕
+results.innerHTML = ""
 
-</pre>
-</div>
-`
+const agents = data.arguments
 
-/* fetch debate */
+if(!agents){
+results.innerHTML = "No responses returned"
+return
+}
 
-const res=await fetch("/debate?question="+encodeURIComponent(q))
-const data=await res.json()
+Object.keys(agents).forEach(agent => {
 
-results.innerHTML=""
+const div = document.createElement("div")
 
-if(data.debate){
+div.className = "agent"
 
-const agents=data.debate.arguments
-
-Object.keys(agents).forEach(agent=>{
-
-const div=document.createElement("div")
-
-div.className="agent"
-
-div.innerHTML=`
-
-<div class="agent-title">// ${agent}</div>
-
-<pre>
-${agents[agent]}
-</pre>
-
+div.innerHTML = `
+<h3>${agent}</h3>
+<p>${agents[agent]}</p>
 `
 
 results.appendChild(div)
 
 })
-
-const critic=document.createElement("div")
-
-critic.className="agent"
-
-critic.innerHTML=`
-
-<div class="agent-title">// critic_evaluation</div>
-
-<pre>
-${data.debate.evaluation}
-</pre>
-
-`
-
-results.appendChild(critic)
-
-}
 
 }

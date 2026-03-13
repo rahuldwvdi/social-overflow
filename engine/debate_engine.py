@@ -1,72 +1,24 @@
-from agents.engineer_agent import engineer_agent
-from agents.research_agent import research_agent
-from agents.startup_agent import startup_agent
-from agents.security_agent import security_agent
-from agents.philosophy_agent import philosophy_agent
-
-from agents.critic_agent import critic_agent
-
-from engine.critique_engine import generate_critique
-
-from memory.database import save_debate
-from memory.retrieval import find_similar_question
+from agents.poet_agent import poet_agent
+from agents.artist_agent import artist_agent
+from agents.techy_agent import techy_agent
+from agents.god_agent import god_agent
+from agents.drunk_agent import drunk_agent
+from agents.philosopher_agent import philosopher_agent
+from agents.evil_agent import evil_agent
 
 
 def run_debate(question: str):
 
-    previous = find_similar_question(question)
-
-    if previous:
-
-        return {
-            "message": "Previous debate found",
-            "question": previous[0],
-            "best_agent": previous[1],
-            "confidence": previous[2],
-            "evaluation": previous[3]
-        }
-
     responses = {}
 
-    responses["Engineer Agent"] = engineer_agent(question)
-    responses["Research Agent"] = research_agent(question)
-    responses["Startup Agent"] = startup_agent(question)
-    responses["Security Agent"] = security_agent(question)
-    responses["Philosophy Agent"] = philosophy_agent(question)
-
-    critiques = {}
-
-    for agent in responses:
-
-        other = ""
-
-        for a, ans in responses.items():
-
-            if a != agent:
-                other += f"{a}: {ans}\n"
-
-        critiques[agent] = generate_critique(agent, question, other)
-
-    evaluation = critic_agent(question, responses)
-
-    best_agent = "Unknown"
-    confidence = 0
-
-    for line in evaluation.split("\n"):
-
-        if "Best Agent" in line:
-            best_agent = line.split(":")[-1].strip()
-
-        if "Confidence" in line:
-            try:
-                confidence = float(line.split(":")[-1])
-            except:
-                confidence = 0
-
-    save_debate(question, best_agent, confidence, evaluation)
+    responses["Poet"] = poet_agent(question)
+    responses["Artist"] = artist_agent(question)
+    responses["Techy"] = techy_agent(question)
+    responses["God"] = god_agent(question)
+    responses["Drunk Man"] = drunk_agent(question)
+    responses["Philosopher"] = philosopher_agent(question)
+    responses["Evil but Funny"] = evil_agent(question)
 
     return {
-        "arguments": responses,
-        "critiques": critiques,
-        "evaluation": evaluation
+        "arguments": responses
     }
