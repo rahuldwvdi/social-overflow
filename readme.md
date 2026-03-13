@@ -1,11 +1,12 @@
-# Social Overflow
 ```
+# Social Overflow
+
 Social Overflow is a small AI playground where multiple **character agents** answer the same question in their own style.
 
 Instead of a single AI response, different personalities respond independently. Each agent interprets the question through its own tone, perspective, or humor.
-```
+
 ## Agents
-```
+
 - 📝 Poet  
 - 🎨 Artist  
 - 💻 Techy  
